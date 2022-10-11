@@ -1,19 +1,6 @@
-// import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
-// import Map from './Map'
-
-// export default function MapContainer() {
-//   const { isLoaded } = useJsApiLoader({
-//     id: 'google-map-script',
-//     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
-//   });
-
-//   if (!isLoaded) return <div>Loading... </div>
-
-//   return <Map />;
-// }
-
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import { useState, useCallback } from 'react';
+import classes from './Map.module.css'
 
 const containerStyle = {
   width: '100vw',
@@ -30,7 +17,7 @@ export default function Map() {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
 
   // const onLoad = useCallback(function callback(map) {
@@ -50,7 +37,11 @@ export default function Map() {
         zoom={13}
         // onLoad={onLoad}
         onUnmount={onUnmount}
-      >
+        options={{
+          fullscreenControl: false,
+          mapTypeControl: false
+        }}
+      > 
         { /* Child components, such as markers, info windows, etc. */ }
         <></>
       </GoogleMap>
