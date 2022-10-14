@@ -2,19 +2,16 @@ import { useReducer, useState } from 'react';
 import classes from './SearchBar.module.css';
 import { IoSearchOutline, IoCloseOutline } from "react-icons/io5";
 
-export default function SearchBar() {
-  const [search, setSearch] = useState('');
+export default function SearchBar(props) {
+  const [searchTerm, setSearchTerm] = useState('');
 
-  function searchHandler(event) {
-    setSearch(event.target.value);
-  }
-
-  function submitHandler(event) {
-    event.preventDefault();
+  function searchHandler(e) {
+    setSearchTerm(e.target.value);
   };
 
-  function clearSearch() {
-    setSearch('')
+  function submitHandler(e) {
+    e.preventDefault();
+    props.onSearch(searchTerm);
   };
 
   return (
