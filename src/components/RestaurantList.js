@@ -11,7 +11,7 @@ export default function RestaurantList(props) {
           name={restaurant.name}
           rating={restaurant.rating}
           price={restaurant.price}
-          address={restaurant.location.display_address}
+          address={restaurant.location.address1}
           image={restaurant.image_url}
           cuisines={restaurant.categories[0].title}
           phone={restaurant.display_phone}
@@ -22,3 +22,4 @@ export default function RestaurantList(props) {
     </div>
   )
 }
+

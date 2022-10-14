@@ -12,7 +12,7 @@ export default function Restaurant(props) {
             <p className={classes.price}>{props.price}</p>
             <p className={classes.cuisines}>&#x2022; {props.cuisines}</p>
           </div>
-          <p className={classes.cuisines}>{props.address}</p>
+          <p className={classes.cuisines}>{props.address}, Toronto</p>
         </div>
 
       </div>

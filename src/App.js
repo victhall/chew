@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <SearchBar onSearch={getRestaurantData} />
-      <RestaurantList restaurantData={restaurantData} />
+      {restaurantData && <RestaurantList restaurantData={restaurantData} />}
       <FavouritesIcon />
       <Map />
     </>
