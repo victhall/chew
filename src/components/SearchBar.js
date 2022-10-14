@@ -1,4 +1,4 @@
-import { useReducer, useState } from 'react';
+import { useState } from 'react';
 import classes from './SearchBar.module.css';
 import { IoSearchOutline, IoCloseOutline } from "react-icons/io5";
 
@@ -14,6 +14,10 @@ export default function SearchBar(props) {
     props.onSearch(searchTerm);
   };
 
+  function clearSearch() {
+    setSearchTerm('');
+  };
+
   return (
     <div className={classes['form-container']}>
       <form onSubmit={submitHandler}>
@@ -22,7 +26,7 @@ export default function SearchBar(props) {
           type='text'
           onChange={searchHandler} />
         <button className={classes['search-btn']}><IoSearchOutline /></button>
-        <button className={classes['close-btn']}><IoCloseOutline /></button>
+        <button className={classes['close-btn']} onClick={clearSearch}><IoCloseOutline /></button>
       </form>
     </div>
   )
