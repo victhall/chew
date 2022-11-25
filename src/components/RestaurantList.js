@@ -1,25 +1,28 @@
-import Restaurant from './Restaurant'
-import classes from './RestaurantList.module.css'
+import Restaurant from './Restaurant';
+import classes from './RestaurantList.module.css';
+import Map from './Map';
 
 export default function RestaurantList(props) {
   return (
-    <div className={classes['restaurant-list']}>
-      {props.restaurantData.map(restaurant => {
-        console.log(restaurant.coordinates)
-        return <Restaurant
-          key={restaurant.id}
-          name={restaurant.name}
-          rating={restaurant.rating}
-          price={restaurant.price}
-          address={restaurant.location.address1}
-          image={restaurant.image_url}
-          cuisines={restaurant.categories[0].title}
-          phone={restaurant.display_phone}
-          url={restaurant.url}
-          coordinates={restaurant.coordinates}
-        />
-      })}
-    </div>
+    <>
+      <div className={classes['restaurant-list']}>
+        {props.restaurantData.map(restaurant => {
+
+          return <Restaurant
+            key={restaurant.id}
+            name={restaurant.name}
+            rating={restaurant.rating}
+            price={restaurant.price}
+            address={restaurant.address}
+            image={restaurant.image}
+            cuisines={restaurant.cuisines}
+            phone={restaurant.phone}
+            url={restaurant.url}
+            coordinates={restaurant.coordinates}
+          />
+        })}
+      </div>
+    </>
   )
 }
 

@@ -1,9 +1,8 @@
 import './App.css';
 import Map from './components/Map'
-import SearchBar from './components/SearchBar';
+import Sidebar from './components/Sidebar'
 import RestaurantList from './components/RestaurantList';
-import FavouritesIcon from './components/FavouritesIcon';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function App() {
@@ -17,8 +16,22 @@ function App() {
         }
       });
       const data = response.data.businesses;
-      console.log(data)
-      setRestaurantData([...data])
+      const loadedRestaurants = [];
+      for (const key in data) {
+        loadedRestaurants.push({
+          id: data[key].id,
+          name: data[key].name,
+          ingredients: data[key].rating,
+          price: data[key].price,
+          address: data[key].location.address1,
+          image: data[key].image_url,
+          cuisines: data[key].categories[0].title,
+          phone: data[key].display_phone,
+          url: data[key].url,
+          coordinates: data[key].coordinates
+        })
+      }
+      setRestaurantData(loadedRestaurants)
     } catch (error) {
       console.error(error)
     }
@@ -26,10 +39,10 @@ function App() {
 
   return (
     <>
-      <SearchBar onSearch={getRestaurantData} />
+      <Sidebar />
       {restaurantData && <RestaurantList restaurantData={restaurantData} />}
-      <FavouritesIcon />
-      <Map />
+      <Map
+        restaurantData={restaurantData} />
     </>
   );
 }

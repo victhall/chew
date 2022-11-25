@@ -1,49 +1,36 @@
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-import { useState, useCallback } from 'react';
-import classes from './Map.module.css'
-
-const containerStyle = {
-  width: '100vw',
-  height: '100vh'
-};
-
-const center = {
-  lat: 43.6532,
-  lng: -79.3832 
-};
+import GoogleMapReact from 'google-map-react';
+import classes from './Map.module.css';
+import { useState, useEffect } from 'react';
 
 export default function Map() {
-  const [map, setMap] = useState(null)
+  // const [coordinates, setCoordinates] = useState([]);
+  // const [bounds, setBounds] = useState([]);
 
-  const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-  });
+  const center = {
+    lat: 43.6532,
+    lng: -79.3832
+  }
 
-  // const onLoad = useCallback(function callback(map) {
-  //   const bounds = new window.google.maps.LatLngBounds(center);
-  //   map.fitBounds(bounds);
-  //   setMap(map)
-  // }, [])
-
-  const onUnmount = useCallback(function callback(map) {
-    setMap(null)
-  }, [])
-
-  return isLoaded ? (
-      <GoogleMap
-        mapContainerStyle={containerStyle}
+  return (
+    <div className={classes['map__container']}>
+      <GoogleMapReact
+        bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
+        defaultCenter={center}
         center={center}
-        zoom={13}
-        // onLoad={onLoad}
-        onUnmount={onUnmount}
-        options={{
-          fullscreenControl: false,
-          mapTypeControl: false
+        defaultZoom={15}
+        margin={[50, 50, 50, 50]}
+        options={{ disableDefaultUI: true, zoomControl: true}}
+        onChange={(e) => {
+          // setCoordinates({lat: e.center.lat, lng: e.center.lng})
+          // setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
+
+          console.log('EVENT', e)
+
         }}
-      > 
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
-      </GoogleMap>
-  ) : <></>
+        onChildClick={''}
+      >
+
+      </GoogleMapReact>
+    </div>
+  )
 }
