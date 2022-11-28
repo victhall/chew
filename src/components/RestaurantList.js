@@ -14,6 +14,9 @@ export default function RestaurantList(props) {
             rating={restaurant.rating}
             price={restaurant.price}
             address={restaurant.address}
+            city={restaurant.city}
+            province={restaurant.province}
+            zip_code={restaurant.zip_code}
             image={restaurant.image}
             cuisines={restaurant.cuisines}
             phone={restaurant.phone}

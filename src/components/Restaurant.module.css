@@ -12,6 +12,14 @@
   border-bottom: 1px solid #e1dedc;
 }
 
+.restaurant-name:hover {
+  cursor: pointer;
+}
+
+.restaurant-header {
+  display: flex;
+}
+
 .restaurant-container p {
   margin: 0px 10px 0px 0px;
   padding: 5px 0 5px;
@@ -22,6 +30,8 @@
 .restaurant-name {
   margin: 0px;
   font-family: 'Tiro Tamil', serif;
+  font-size: 20px;
+  margin-right: 10px;
 }
 
 .inner-container {
@@ -35,4 +45,13 @@
 .star-rating {
   display: flex;
   flex-direction: row;
+}
+
+.save-icon {
+  position: absolute;
+  right: 15px;
+}
+
+.save-icon:hover {
+  cursor: pointer;
 }

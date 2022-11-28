@@ -1,19 +1,18 @@
 import classes from './Sidebar.module.css';
 import SearchBar from './SearchBar';
-import Button from './Button';
+import Navbar from './Navbar';
+import RestaurantList from './RestaurantList';
 
-export default function Sidebar() {
+export default function Sidebar(props) {
   return (
     <section className={classes.sidebar}>
-      
-      <div>
-      <div className={classes.navigation}>
-      <Button className={classes['nav-btn']}>Search</Button>
-      <Button className={classes['nav-btn']}>Favourites</Button>
+      <div className={classes.container}>
+        <div className={classes.navigation}>
+          <Navbar />
+        </div>
+        <SearchBar onSearch={props.onSearch}/>
       </div>
-
-      <SearchBar />
-      </div>
+      {props.restaurantData && <RestaurantList restaurantData={props.restaurantData}/>}
     </section>
   )
 }

@@ -1,0 +1,28 @@
+.nav-saved__btn {
+background-color: transparent;
+border: none;
+color: black;
+border-bottom: 3px solid transparent;
+	padding: 10px 20px 10px 20px;
+	font: inherit;
+	outline: inherit;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.nav-search__btn {
+  background-color: transparent;
+border: none;
+color: black;
+border-bottom: 3px solid #ff7163;
+	padding: 10px 20px 10px 20px;
+	font: inherit;
+	outline: inherit;
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.nav-search__btn:hover, .nav-saved__btn:hover {
+  border-bottom: 3px solid #ff7163;
+  cursor: pointer;
+  }

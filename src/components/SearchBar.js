@@ -25,8 +25,6 @@ export default function SearchBar(props) {
           placeholder='Restaurant or Cuisine'
           type='text'
           onChange={searchHandler} />
-        <button className={classes['search-btn']}><IoSearchOutline /></button>
-        <button className={classes['close-btn']} onClick={clearSearch}><IoCloseOutline /></button>
       </form>
     </div>
   )

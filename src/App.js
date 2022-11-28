@@ -24,6 +24,9 @@ function App() {
           ingredients: data[key].rating,
           price: data[key].price,
           address: data[key].location.address1,
+          city: data[key].location.city,
+          province: data[key].location.state,
+          zip_code: data[key].location.zip_code,
           image: data[key].image_url,
           cuisines: data[key].categories[0].title,
           phone: data[key].display_phone,
@@ -31,6 +34,7 @@ function App() {
           coordinates: data[key].coordinates
         })
       }
+      console.log(loadedRestaurants)
       setRestaurantData(loadedRestaurants)
     } catch (error) {
       console.error(error)
@@ -39,10 +43,8 @@ function App() {
 
   return (
     <>
-      <Sidebar />
-      {restaurantData && <RestaurantList restaurantData={restaurantData} />}
-      <Map
-        restaurantData={restaurantData} />
+      <Sidebar onSearch={getRestaurantData} restaurantData={restaurantData}/>
+      <Map restaurantData={restaurantData} />
     </>
   );
 }
