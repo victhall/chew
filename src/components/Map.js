@@ -2,6 +2,22 @@ import GoogleMapReact from 'google-map-react';
 import classes from './Map.module.css';
 import { useState, useEffect } from 'react';
 
+const AnyReactComponent = ({ text }) => (
+  <div style={{
+    color: 'white', 
+    background: 'grey',
+    padding: '15px 10px',
+    display: 'inline-flex',
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: '100%',
+    transform: 'translate(-50%, -50%)'
+  }}>
+    {text}
+  </div>
+);
+
 export default function Map() {
   // const [coordinates, setCoordinates] = useState([]);
   // const [bounds, setBounds] = useState([]);
@@ -29,6 +45,11 @@ export default function Map() {
         }}
         onChildClick={''}
       >
+        <AnyReactComponent 
+          lat={43.64956354} 
+          lng={-79.38801849} 
+          text={'Jabistro'} 
+        />
 
       </GoogleMapReact>
     </div>
