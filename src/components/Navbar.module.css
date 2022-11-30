@@ -1,28 +1,29 @@
 .nav-saved__btn {
-background-color: transparent;
-border: none;
-color: black;
-border-bottom: 3px solid transparent;
-	padding: 10px 20px 10px 20px;
-	font: inherit;
-	outline: inherit;
+  background-color: transparent;
+  border: none;
+  color: black;
+  border-bottom: 3px solid transparent;
+  padding: 10px 5px 10px 5px;
+  font: inherit;
+  outline: inherit;
   font-weight: 600;
-  margin-left: 5px;
+  margin-left: 25px;
 }
 
 .nav-search__btn {
   background-color: transparent;
-border: none;
-color: black;
-border-bottom: 3px solid #ff7163;
-	padding: 10px 20px 10px 20px;
-	font: inherit;
-	outline: inherit;
+  border: none;
+  color: black;
+  border-bottom: 3px solid #ff7163;
+  padding: 10px 5px 10px 5px;
+  font: inherit;
+  outline: inherit;
   font-weight: 600;
-  margin-right: 5px;
+  margin-right: 25px;
 }
 
-.nav-search__btn:hover, .nav-saved__btn:hover {
+.nav-search__btn:hover,
+.nav-saved__btn:hover {
   border-bottom: 3px solid #ff7163;
   cursor: pointer;
-  }
+}

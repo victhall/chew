@@ -1,31 +1,18 @@
 import GoogleMapReact from 'google-map-react';
 import classes from './Map.module.css';
 import { useState, useEffect } from 'react';
+import { Marker } from './Marker'
 
-const AnyReactComponent = ({ text }) => (
-  <div style={{
-    color: 'white', 
-    background: 'grey',
-    padding: '15px 10px',
-    display: 'inline-flex',
-    textAlign: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: '100%',
-    transform: 'translate(-50%, -50%)'
-  }}>
-    {text}
-  </div>
-);
-
-export default function Map() {
-  // const [coordinates, setCoordinates] = useState([]);
+export default function Map({ restaurantData }) {
+  const [coordinates, setCoordinates] = useState([]);
   // const [bounds, setBounds] = useState([]);
 
   const center = {
     lat: 43.6532,
     lng: -79.3832
   }
+
+  {console.log('RD', restaurantData)}
 
   return (
     <div className={classes['map__container']}>
@@ -35,7 +22,7 @@ export default function Map() {
         center={center}
         defaultZoom={15}
         margin={[50, 50, 50, 50]}
-        options={{ disableDefaultUI: true, zoomControl: true}}
+        options={{ disableDefaultUI: true, zoomControl: true }}
         onChange={(e) => {
           // setCoordinates({lat: e.center.lat, lng: e.center.lng})
           // setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
@@ -45,10 +32,10 @@ export default function Map() {
         }}
         onChildClick={''}
       >
-        <AnyReactComponent 
-          lat={43.64956354} 
-          lng={-79.38801849} 
-          text={'Jabistro'} 
+        <Marker
+          lat={43.64956354}
+          lng={-79.38801849}
+          text={'Jabistro'}
         />
 
       </GoogleMapReact>

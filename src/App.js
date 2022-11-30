@@ -1,8 +1,7 @@
 import './App.css';
-import Map from './components/Map'
-import Sidebar from './components/Sidebar'
-import RestaurantList from './components/RestaurantList';
-import { useState, useEffect } from 'react';
+import Map from './components/Map';
+import Sidebar from './components/Sidebar';
+import { useState } from 'react';
 import axios from 'axios';
 
 function App() {
@@ -34,7 +33,6 @@ function App() {
           coordinates: data[key].coordinates
         })
       }
-      console.log(loadedRestaurants)
       setRestaurantData(loadedRestaurants)
     } catch (error) {
       console.error(error)
@@ -43,7 +41,7 @@ function App() {
 
   return (
     <>
-      <Sidebar onSearch={getRestaurantData} restaurantData={restaurantData}/>
+      <Sidebar onSearch={getRestaurantData} restaurantData={restaurantData} />
       <Map restaurantData={restaurantData} />
     </>
   );
