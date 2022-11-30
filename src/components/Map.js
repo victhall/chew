@@ -12,8 +12,6 @@ export default function Map({ restaurantData }) {
     lng: -79.3832
   }
 
-  {console.log('RD', restaurantData)}
-
   return (
     <div className={classes['map__container']}>
       <GoogleMapReact
@@ -32,12 +30,13 @@ export default function Map({ restaurantData }) {
         }}
         onChildClick={''}
       >
-        <Marker
-          lat={43.64956354}
-          lng={-79.38801849}
-          text={'Jabistro'}
+        {restaurantData.length && restaurantData.map((restaurant, i) => (
+                  <Marker
+          lat={restaurant.coordinates.latitude}
+          lng={restaurant.coordinates.longitude}
+          text={restaurant.name}
         />
-
+        ))}
       </GoogleMapReact>
     </div>
   )
