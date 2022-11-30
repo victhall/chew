@@ -18,7 +18,7 @@ export default function Map({ restaurantData }) {
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
         defaultCenter={center}
         center={center}
-        defaultZoom={15}
+        defaultZoom={14}
         margin={[50, 50, 50, 50]}
         options={{ disableDefaultUI: true, zoomControl: true }}
         onChange={(e) => {
@@ -31,11 +31,12 @@ export default function Map({ restaurantData }) {
         onChildClick={''}
       >
         {restaurantData.length && restaurantData.map((restaurant, i) => (
-                  <Marker
-          lat={restaurant.coordinates.latitude}
-          lng={restaurant.coordinates.longitude}
-          text={restaurant.name}
-        />
+          <Marker
+            key={i}
+            lat={restaurant.coordinates.latitude}
+            lng={restaurant.coordinates.longitude}
+            text={restaurant.name}
+          />
         ))}
       </GoogleMapReact>
     </div>

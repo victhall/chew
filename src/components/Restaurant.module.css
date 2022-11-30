@@ -6,14 +6,28 @@
   border-radius: 15px;
 }
 
+.restaurant-img:hover {
+cursor: pointer;
+}
+
 .restaurant-container {
   display: flex;
   padding: 35px 15px 25px 15px;
   border-bottom: 1px solid #e1dedc;
 }
 
+.restaurant-name {
+  margin: 0px;
+  font-family: 'Tiro Tamil', serif;
+  font-size: 20px;
+  margin-right: 10px;
+  border-bottom: 1.5px solid transparent;
+  line-height: 20px;
+}
+
 .restaurant-name:hover {
   cursor: pointer;
+  border-bottom: 1.5px solid #1f1f1f;
 }
 
 .restaurant-header {
@@ -27,15 +41,8 @@
   font-size: 15px;
 }
 
-.restaurant-name {
-  margin: 0px;
-  font-family: 'Tiro Tamil', serif;
-  font-size: 20px;
-  margin-right: 10px;
-}
-
 .inner-container {
-  padding-left: 20px;
+  padding: 5px 5px 5px 20px;
 }
 
 .price-cuisine {

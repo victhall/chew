@@ -1,6 +1,5 @@
 import Restaurant from './Restaurant';
 import classes from './RestaurantList.module.css';
-import Map from './Map';
 
 export default function RestaurantList(props) {
   return (
