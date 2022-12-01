@@ -13,7 +13,10 @@ export default function Sidebar(props) {
         </div>
         <SearchBar onSearch={props.onSearch} />
       </div>
-      {props.restaurantData && <RestaurantList restaurantData={props.restaurantData} />}
+      <div>
+      {props.restaurantData && <RestaurantList restaurantData={props.restaurantData} />}  
+      </div>
+      
     </section>
   )
 }
