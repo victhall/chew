@@ -25,7 +25,7 @@ export default function Restaurant(props) {
               <FaStar
               className={classes.star}
                 key={i}
-                color={props.rating >= i ? '' : "lightgrey"}
+                color={props.rating >= i ? '#ea4336' : "lightgrey"}
               />
             ))}
             <p>{props.rating}</p>

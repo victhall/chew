@@ -28,16 +28,16 @@ body {
   margin: 0px;
   font-family: 'Tiro Tamil', serif;
   font-size: 25px;
-  margin-right: 30px;
+  margin-right: 5px;
   border-bottom: 1.5px solid transparent;
-  line-height: 20px;
+  line-height: 32px;
   color: #1f1f1f;
 }
 
 .restaurant-header {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
   padding-right: 9px;
 }
 
@@ -48,7 +48,7 @@ body {
 }
 
 .inner-container {
-  padding: 20px 5px 5px 20px;
+  padding: 15px 5px 5px 20px;
 }
 
 .price-cuisine {
@@ -62,7 +62,7 @@ body {
   padding: 5px 5px;
   font-weight: 500;
   margin: 6px 0px 0px 0px;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .star-rating {
@@ -78,7 +78,9 @@ body {
   cursor: pointer;
 }
 
-.address, .phone, .url {
+.address,
+.phone,
+.url {
   padding-bottom: 12px;
   font-weight: 500;
   color: #353f54;
@@ -90,18 +92,18 @@ body {
 }
 
 .icon {
-  color: #ff7163;
+  color: #ea4336;
   font-size: 17px;
 }
 
 .star-rating {
-  padding: 2px 0 8px 0;
+  padding-bottom: 8px;
 }
 
 .star-rating p {
-margin-left: 10px;
-margin-top: 6px;
-font-size: 16px;
+  margin-left: 10px;
+  margin-top: 6px;
+  font-size: 16px;
 }
 
 .star {

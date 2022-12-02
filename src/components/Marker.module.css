@@ -1,11 +1,18 @@
 .marker {
-    color: white;
-    background-color: grey;
-    padding: 15px 10px;
-    display: inline-flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100%;
-    transform: translate(-50%, -50%);
-  }
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  background: #ea4336;
+  transform: rotate(-45deg);
+  border: 1px solid #b11313;
+}
+
+.marker:after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  margin: 7px 0 0 7px;
+  background: #b11313;
+  position: absolute;
+  border-radius: 50%;
+}
