@@ -15,12 +15,13 @@ function App() {
         }
       });
       const data = response.data.businesses;
+      console.log('DATA', data)
       const loadedRestaurants = [];
       for (const key in data) {
         loadedRestaurants.push({
           id: data[key].id,
           name: data[key].name,
-          ingredients: data[key].rating,
+          rating: data[key].rating,
           price: data[key].price,
           address: data[key].location.address1,
           city: data[key].location.city,
