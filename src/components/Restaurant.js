@@ -4,12 +4,23 @@ import { BsPhone } from "react-icons/bs";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BiLinkAlt } from "react-icons/bi";
 import { FaStar } from "react-icons/fa";
-import { useRef, useState } from 'react';
+import { useRef, useState, useContext } from 'react';
 import SaveModal from './UI/SaveModal';
+import CollectionContext from './store/collection-context'
+import CollectionForm from './CollectionForm';
 
 export default function Restaurant(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const collectionNameRef = useRef();
+
+  const collectionCtx = useContext(CollectionContext)
+
+  function addToCollection(collectionName) {
+    collectionCtx.saveRestaurant({
+      collectionName,
+      name: props.name,
+      address: props.address
+    })
+  }
 
   function openModal() {
     setIsModalOpen(true);
@@ -23,17 +34,11 @@ export default function Restaurant(props) {
 
   const modaldetails =
     <div>
-      <span>      
-        <form>
-        <input
-          ref={collectionNameRef}
-          placeholder='Collection name'
-          type='text'
-        />
-       <button>+</button>
-      </form></span>
+      <CollectionForm onAddToCollection={addToCollection} />
 
-      <div></div>
+      <div>
+
+      </div>
     </div>
 
   return (
