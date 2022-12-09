@@ -37,7 +37,7 @@ body {
 .restaurant-header {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 15px;
+  padding-bottom: 2px;
   padding-right: 9px;
 }
 
@@ -72,6 +72,7 @@ body {
 
 .save-icon {
   font-size: 21px;
+  margin: 4px;
 }
 
 .save-icon:hover {

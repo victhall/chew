@@ -4,9 +4,37 @@ import { BsPhone } from "react-icons/bs";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BiLinkAlt } from "react-icons/bi";
 import { FaStar } from "react-icons/fa";
+import { useRef, useState } from 'react';
+import SaveModal from './UI/SaveModal';
 
 export default function Restaurant(props) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const collectionNameRef = useRef();
+
+  function openModal() {
+    setIsModalOpen(true);
+  };
+
+  function closeModal() {
+    setIsModalOpen(false)
+  };
+
   const starArray = [...Array(5).keys()].map(i => i + 1);
+
+  const modaldetails =
+    <div>
+      <span>      
+        <form>
+        <input
+          ref={collectionNameRef}
+          placeholder='Collection name'
+          type='text'
+        />
+       <button>+</button>
+      </form></span>
+
+      <div></div>
+    </div>
 
   return (
     <>
@@ -17,13 +45,13 @@ export default function Restaurant(props) {
         <div className={classes['inner-container']}>
           <div className={classes['restaurant-header']}>
             <h2 className={classes['restaurant-name']}>{props.name}</h2>
-            <CiBookmark className={classes['save-icon']} />
+            <CiBookmark className={classes['save-icon']} onClick={openModal} />
           </div>
 
           <div className={classes['star-rating']}>
             {starArray.map(i => (
               <FaStar
-              className={classes.star}
+                className={classes.star}
                 key={i}
                 color={props.rating >= i ? '#ea4336' : "lightgrey"}
               />
@@ -43,7 +71,7 @@ export default function Restaurant(props) {
           <p className={classes.url}><BiLinkAlt className={classes.icon} /> <a href={props.url}> Website</a></p>
         </div>
       </div>
-
+      {isModalOpen && <SaveModal>{modaldetails}</SaveModal>}
     </>
   )
 }
