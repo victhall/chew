@@ -3,6 +3,8 @@ import Map from './components/Map';
 import Sidebar from './components/Sidebar';
 import { useState } from 'react';
 import axios from 'axios';
+import Collection from './components/Collection'
+import CollectionProvider from './components/store/CollectionProvider';
 
 function App() {
   const [restaurantData, setRestaurantData] = useState([]);
@@ -41,10 +43,11 @@ function App() {
   }
 
   return (
-    <>
+    <CollectionProvider>
       <Sidebar onSearch={getRestaurantData} restaurantData={restaurantData} />
       <Map restaurantData={restaurantData} />
-    </>
+      <Collection />
+    </CollectionProvider>
   );
 }
 

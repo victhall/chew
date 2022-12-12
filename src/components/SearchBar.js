@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import classes from './SearchBar.module.css';
-import { IoSearchOutline, IoCloseOutline } from "react-icons/io5";
 
 export default function SearchBar(props) {
   const [searchTerm, setSearchTerm] = useState('');

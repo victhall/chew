@@ -16,7 +16,7 @@ export default function Restaurant(props) {
 
   function addToCollection(collectionName) {
     collectionCtx.saveRestaurant({
-      collectionName,
+      collectionName: collectionName,
       name: props.name,
       address: props.address
     })
