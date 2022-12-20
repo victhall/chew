@@ -18,7 +18,11 @@ export default function Restaurant(props) {
     collectionCtx.saveRestaurant({
       collectionName: collectionName,
       name: props.name,
-      address: props.address
+      address: props.address,
+      city: props.city,
+      province: props.province,
+      zip_code: props.zip_code,
+      price: props.price
     })
   }
 

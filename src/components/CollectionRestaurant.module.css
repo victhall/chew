@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500&family=Tiro+Tamil&display=swap');
+
+.restaurant-name {
+  font-family: 'Tiro Tamil', serif;
+  font-size: 20px;
+  margin: 0;
+}
+
+.restaurant-address {
+  font-family: 'Albert Sans', sans-serif;
+  font-size: 15px;
+  margin: 0;
+  padding-top: 5px;
+}
