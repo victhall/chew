@@ -5,10 +5,9 @@ import CollectionRestaurant from './CollectionRestaurant';
 export default function Collection() {
   const collectionCtx = useContext(CollectionContext);
 
-  // const saveRestaurantHandler = (restaurant) => {
-  //   const collectionRestaurant = { ...restaurant};
-  //   CollectionContext.saveRestaurant(collectionRestaurant);
-  // };
+  function restaurantRemoveHandler(name) {
+    collectionCtx.removeRestaurant(name)
+  }
 
   let groupedCollections = collectionCtx.restaurants.reduce((groupedObj, item) => {
 
@@ -24,6 +23,7 @@ export default function Collection() {
      <CollectionRestaurant
       collectionData={groupedCollections}
       // onAdd={saveRestaurantHandler.bind(null, { ...restaurant})}
+      onRemove={restaurantRemoveHandler}
       />
     
   </ul>)

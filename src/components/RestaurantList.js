@@ -21,6 +21,8 @@ export default function RestaurantList(props) {
             phone={restaurant.phone}
             url={restaurant.url}
             coordinates={restaurant.coordinates}
+            is_closed={restaurant.is_closed}
+            id={restaurant.id}
           />
         })}
       </div>

@@ -22,7 +22,10 @@ export default function Restaurant(props) {
       city: props.city,
       province: props.province,
       zip_code: props.zip_code,
-      price: props.price
+      price: props.price,
+      is_closed: props.is_closed,
+      url: props.url,
+      id: props.id
     })
   }
 

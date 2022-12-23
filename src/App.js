@@ -33,7 +33,9 @@ function App() {
           cuisines: data[key].categories[0].title,
           phone: data[key].display_phone,
           url: data[key].url,
-          coordinates: data[key].coordinates
+          coordinates: data[key].coordinates,
+          is_closed:data[key].is_closed,
+          id: data[key].id
         })
       }
       setRestaurantData(loadedRestaurants)
