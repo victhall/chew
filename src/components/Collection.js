@@ -19,20 +19,10 @@ export default function Collection() {
     return groupedObj;
   }, {})
 
-
-  
   return (<ul>
 
      <CollectionRestaurant
       collectionData={groupedCollections}
-        // name={restaurant.name}
-        // address={restaurant.address}
-        // city={restaurant.city}
-        // province={restaurant.province}
-        // zip_code={restaurant.zip_code}
-        // price={restaurant.price}
-        // collectionName={restaurant.collectionName}
-        // categories={categories}
       // onAdd={saveRestaurantHandler.bind(null, { ...restaurant})}
       />
     
