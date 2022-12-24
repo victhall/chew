@@ -48,7 +48,6 @@ function App() {
     <CollectionProvider>
       <Sidebar onSearch={getRestaurantData} restaurantData={restaurantData} />
       <Map restaurantData={restaurantData} />
-      {/* <Collection /> */}
     </CollectionProvider>
   );
 }

@@ -28,7 +28,6 @@
 .restaurant-header {
   display: flex;
   flex-direction: row;
-  margin-top: 15px;
 }
 
 .restaurant-price {
@@ -62,22 +61,23 @@ border-radius: 8px;
 }
 
 .url:hover {
-
 }
 
+
 .remove-btn {
-  display: block;
+  visibility: hidden;
+  font-size: 22px;
+  margin: 0;
+  padding-top: 5px;
+  padding-left: 20px;
+} 
+
+.container:hover .remove-btn {
+  visibility: visible;
   font-size: 22px;
   margin: 0;
   padding-top: 5px;
   padding-left: 20px;
   color: #eb3f33;
   text-align: right;
-  /* position: fixed;
-  left: 330px;
-  top: 300px */
-  /* 
-  position: absolute; */
-  /* right: 57px;
-  bottom: 525px */
-} 
+}

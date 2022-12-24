@@ -14,18 +14,17 @@ export default function Collection() {
     groupedObj[item.collectionName] = groupedObj[item.collectionName] || [];
 
     groupedObj[item.collectionName].push(item)
-    console.log('I RAN')
+
     return groupedObj;
   }, {})
 
   return (<ul>
 
-     <CollectionRestaurant
+    <CollectionRestaurant
       collectionData={groupedCollections}
-      // onAdd={saveRestaurantHandler.bind(null, { ...restaurant})}
       onRemove={restaurantRemoveHandler}
-      />
-    
+    />
+
   </ul>)
 
 }

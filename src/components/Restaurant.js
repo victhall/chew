@@ -8,11 +8,12 @@ import { useRef, useState, useContext } from 'react';
 import SaveModal from './UI/SaveModal';
 import CollectionContext from './store/collection-context'
 import CollectionForm from './CollectionForm';
+import Category from './Category';
 
 export default function Restaurant(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const collectionCtx = useContext(CollectionContext)
+  const collectionCtx = useContext(CollectionContext);
 
   function addToCollection(collectionName) {
     collectionCtx.saveRestaurant({
@@ -42,10 +43,11 @@ export default function Restaurant(props) {
   const modaldetails =
     <div>
       <CollectionForm onAddToCollection={addToCollection} />
-
       <div>
-
+{ collectionCtx.restaurants.map(restaurant => <Category title={restaurant.collectionName}/>
+     )} 
       </div>
+
     </div>
 
   return (
