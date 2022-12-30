@@ -40,14 +40,25 @@ export default function Restaurant(props) {
 
   const starArray = [...Array(5).keys()].map(i => i + 1);
 
+  const uniqueTitle = [];
+
+  collectionCtx.restaurants.filter(element => {
+    const isDuplicate = uniqueTitle.includes(element.collectionName);
+
+    if (!isDuplicate) {
+      uniqueTitle.push(element.collectionName);
+
+      return true;
+    }
+    return false;
+  });
+
   const modaldetails =
     <div>
-      <CollectionForm onAddToCollection={addToCollection} />
+      <CollectionForm onAddToCollection={addToCollection} title={uniqueTitle}/>
       <div>
-{ collectionCtx.restaurants.map(restaurant => <Category title={restaurant.collectionName}/>
-     )} 
+        {/* <Category title={uniqueTitle} /> */}
       </div>
-
     </div>
 
   return (
