@@ -29,5 +29,3 @@ export default function CollectionRestaurant(props) {
     </div>
   )
 }
-
-// onClick={props.onRemove.bind(null, item.name)}

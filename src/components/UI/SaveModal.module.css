@@ -12,3 +12,11 @@
   z-index: 30;
   animation: slide-down 300ms ease-out forwards;
 }
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  z-index: 20;
+}

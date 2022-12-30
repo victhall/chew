@@ -3,7 +3,7 @@ import classes from './CollectionForm.module.css'
 
 export default function CollectionForm(props) {
   const collectionNameRef = useRef();
-  const [title, setTitle] = useState('')
+  const [title, setTitle] = useState('');
 
   let getTitle = (e) => {
     const { value } = e.target.dataset;
@@ -20,7 +20,6 @@ export default function CollectionForm(props) {
       let enteredName = collectionNameRef.current.value.toLowerCase();
       props.onAddToCollection(enteredName)
     }
-
   }
 
   return (
@@ -39,5 +38,3 @@ export default function CollectionForm(props) {
     </form>
   );
 }
-
-// onClick={getTitle}
