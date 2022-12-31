@@ -19,7 +19,9 @@ export default function CollectionForm(props) {
     } else {
       let enteredName = collectionNameRef.current.value.toLowerCase();
       props.onAddToCollection(enteredName)
+      collectionNameRef.current.value = '';
     }
+    props.onCloseModal()
   }
 
   return (

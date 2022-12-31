@@ -14,16 +14,21 @@ function showHandler() {
   setHide(false)
 }
 
+function hideHandler() {
+  setShow(false)
+  setHide(true)
+}
+
   return (
     <section className={classes.sidebar}>
       <div className={classes.container}>
         <div className={classes.navigation}>
-          <Navbar onShow={showHandler}/>
+          <Navbar onShow={showHandler} onHide={hideHandler}/>
         </div>
-        <SearchBar onSearch={props.onSearch} />
+        {<SearchBar onSearch={props.onSearch} />}
       </div>
       <div>
-      {hide && props.restaurantData && <RestaurantList restaurantData={props.restaurantData} />} 
+      {!show && hide && props.restaurantData && <RestaurantList restaurantData={props.restaurantData} />} 
       </div>
       <div>
       {show && <Collection />}
