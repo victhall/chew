@@ -54,7 +54,7 @@ export default function Restaurant(props) {
 
   const modaldetails =
     <div>
-      <CollectionForm onAddToCollection={addToCollection} title={uniqueTitle} onCloseModal={closeModal}/>
+      <CollectionForm onAddToCollection={addToCollection} title={uniqueTitle} onCloseModal={closeModal} />
     </div>
 
   return (

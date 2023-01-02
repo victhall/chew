@@ -2,7 +2,6 @@ import classes from './CollectionRestaurant.module.css'
 import { CiCircleRemove } from "react-icons/ci";
 
 export default function CollectionRestaurant(props) {
-  console.log('dataa', props.collectionData)
 
   return (
     <div>

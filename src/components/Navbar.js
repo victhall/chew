@@ -5,6 +5,6 @@ export default function Navbar(props) {
     <>
       <span><button onClick={props.onHide} className={classes['nav-search__btn']}>Search</button></span>
       <span><button onClick={props.onShow} className={classes['nav-saved__btn']}>Saved</button></span>
-      </>
+    </>
   )
 }

@@ -24,24 +24,25 @@ const restaurantReducer = (state, action) => {
     } else {
       updatedRestaurants = state.restaurants.concat(action.restaurant);
     }
-
     return {
       restaurants: updatedRestaurants
     }
   }
-  if(action.type === 'REMOVE_RESTAURANT') {
+
+  if (action.type === 'REMOVE_RESTAURANT') {
     const existingRestaurantIndex = state.restaurants.findIndex(
       (restaurant) => restaurant.name === action.name
     );
-    const existingRestaurant = state.restaurants[existingRestaurantIndex]
 
-    let updatedRestaurants
-    if(existingRestaurant) {
+    const existingRestaurant = state.restaurants[existingRestaurantIndex];
+    let updatedRestaurants;
+
+    if (existingRestaurant) {
       updatedRestaurants = state.restaurants.filter((restaurant) => restaurant.name !== action.name)
     } else {
-      const updatedRestaurant = {...existingRestaurant};
+      const updatedRestaurant = { ...existingRestaurant };
       updatedRestaurant = [...state.restaurants];
-      updatedRestaurants[existingRestaurantIndex] = updatedRestaurant
+      updatedRestaurants[existingRestaurantIndex] = updatedRestaurant;
     }
     return {
       restaurants: updatedRestaurants
@@ -58,7 +59,7 @@ const CollectionProvider = (props) => {
   };
 
   const removeRestaurantHandler = (name) => {
-    dispatchRestaurantAction({type: 'REMOVE_RESTAURANT', name: name})
+    dispatchRestaurantAction({ type: 'REMOVE_RESTAURANT', name: name })
   }
 
   const collectionContext = {

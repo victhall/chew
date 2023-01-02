@@ -12,23 +12,6 @@ input:focus {
   outline: none;
 }
 
-/* button {
-  height: 50px;
-  width: 50px;
-  border: none;
-  cursor: pointer;
-  outline: 0;
-  font-size: 24px;
-  background-color: #ffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
-/* .close-btn {
-  border-radius: 0 5px 5px 0; 
-} */
-
 .form-container {
   padding-top: 20px;
   width: 80%;

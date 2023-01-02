@@ -3,7 +3,6 @@ import Map from './components/Map';
 import Sidebar from './components/Sidebar';
 import { useState } from 'react';
 import axios from 'axios';
-import Collection from './components/Collection'
 import CollectionProvider from './components/store/CollectionProvider';
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
         }
       });
       const data = response.data.businesses;
-      console.log('DATA', data)
       const loadedRestaurants = [];
       for (const key in data) {
         loadedRestaurants.push({
@@ -40,7 +38,7 @@ function App() {
       }
       setRestaurantData(loadedRestaurants)
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
   }
 

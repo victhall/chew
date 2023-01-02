@@ -9,25 +9,28 @@ export default function CollectionForm(props) {
     const { value } = e.target.dataset;
     setTitle(value)
   };
-  console.log(title)
+console.log('TITLEEEE', title)
 
   function submitHandler(e) {
     e.preventDefault();
+    if (collectionNameRef.current.value.trim().length === 0 && title === '') {
+      return alert("Please enter a valid collection name")
+    }
+    
     if (collectionNameRef.current.value == "") {
-      let enteredCollectionName = title
-      props.onAddToCollection(enteredCollectionName)
+      let enteredCollectionName = title;
+      props.onAddToCollection(enteredCollectionName);
     } else {
-      let enteredName = collectionNameRef.current.value.toLowerCase();
-      props.onAddToCollection(enteredName)
+      let enteredName = collectionNameRef.current.value.toLowerCase().trim();
+      props.onAddToCollection(enteredName);
       collectionNameRef.current.value = '';
     }
-    props.onCloseModal()
+    props.onCloseModal();
   }
 
   return (
     <form className={classes.form} onSubmit={submitHandler}>
       <input
-        input
         type='text'
         placeholder='Collection name'
         ref={collectionNameRef}
@@ -36,7 +39,7 @@ export default function CollectionForm(props) {
         {props.title.map(element =>
           <div data-value={element} onClick={getTitle}>{element}</div>)}
       </div>
-      <button type='submit'>+</button>
+      <button type='submit'>Save</button>
     </form>
   );
 }

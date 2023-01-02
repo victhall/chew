@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import CollectionContext from './store/collection-context';
 import CollectionRestaurant from './CollectionRestaurant';
 
@@ -26,5 +26,5 @@ export default function Collection() {
     />
 
   </ul>)
-
+  
 }

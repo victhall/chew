@@ -13,10 +13,6 @@ export default function SearchBar(props) {
     props.onSearch(searchTerm);
   };
 
-  function clearSearch() {
-    setSearchTerm('');
-  };
-
   return (
     <div className={classes['form-container']}>
       <form onSubmit={submitHandler}>
