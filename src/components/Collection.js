@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import CollectionContext from './store/collection-context';
 import CollectionRestaurant from './CollectionRestaurant';
+import classes from './collection.module.css'
 
 export default function Collection() {
   const collectionCtx = useContext(CollectionContext);
@@ -20,11 +21,11 @@ export default function Collection() {
 
   return (<ul>
 
-    <CollectionRestaurant
+    {collectionCtx.restaurants.length ? <CollectionRestaurant
       collectionData={groupedCollections}
       onRemove={restaurantRemoveHandler}
-    />
+    /> : <h2 className={classes.message}>You have nothing saved.</h2>}
 
   </ul>)
-  
+
 }

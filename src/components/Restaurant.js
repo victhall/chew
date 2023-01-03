@@ -4,7 +4,7 @@ import { BsPhone } from "react-icons/bs";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { BiLinkAlt } from "react-icons/bi";
 import { FaStar } from "react-icons/fa";
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import SaveModal from './UI/SaveModal';
 import CollectionContext from './store/collection-context'
 import CollectionForm from './CollectionForm';
@@ -12,7 +12,9 @@ import CollectionForm from './CollectionForm';
 export default function Restaurant(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  if(props.selected) props.refProp?.current?.scrollIntoView({behavior: 'smooth', block: 'start'})
+  useEffect(() => {
+    if (props.selected) props.refProp?.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }, [props.selected])
 
   const collectionCtx = useContext(CollectionContext);
 

@@ -1,6 +1,7 @@
-import classes from './Navbar.module.css'
+import classes from './Navbar.module.css';
 
 export default function Navbar(props) {
+
   return (
     <>
       <span><button onClick={props.onHide} className={classes['nav-search__btn']}>Search</button></span>

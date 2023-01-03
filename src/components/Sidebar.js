@@ -6,18 +6,18 @@ import Collection from './Collection';
 import { useState } from 'react';
 
 export default function Sidebar(props) {
-  const [show, setShow] = useState(false)
-  const [hide, setHide] = useState(true)
+  const [show, setShow] = useState(false);
+  const [hide, setHide] = useState(true);
 
-function showHandler() {
-  setShow(true);
-  setHide(false)
-}
+  function showHandler() {
+    setShow(true);
+    setHide(false);
+  }
 
-function hideHandler() {
-  setShow(false)
-  setHide(true)
-}
+  function hideHandler() {
+    setShow(false);
+    setHide(true);
+  }
 
   return (
     <section className={classes.sidebar}>
@@ -28,12 +28,11 @@ function hideHandler() {
         {<SearchBar onSearch={props.onSearch} />}
       </div>
       <div>
-      {!show && hide && props.restaurantData && <RestaurantList restaurantData={props.restaurantData} childClicked={props.childClicked}/>} 
+        {!show && hide && props.restaurantData && <RestaurantList restaurantData={props.restaurantData} childClicked={props.childClicked} />}
       </div>
       <div>
-      {show && <Collection />}
+        {show && <Collection />}
       </div>
-      
     </section>
   )
 }

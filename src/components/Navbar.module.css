@@ -23,6 +23,6 @@
 
 .nav-search__btn:hover,
 .nav-saved__btn:hover {
-  border-bottom: 3px solid #ff7163;
+  color: #ea4336;
   cursor: pointer;
 }

@@ -1,0 +1,71 @@
+.btn {
+  background: #ea4336;
+  border: 1px solid #ea4336;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: 'Albert Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  outline: 0;
+  padding: 5px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  letter-spacing: .8px;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #ea4336;
+}
+
+.btn:active {
+  opacity: .5;
+}
+
+.title {
+  text-transform: capitalize;
+  font-family: 'Albert Sans', sans-serif;
+  color: black;
+  font-weight: 500;
+  padding: 10px 0;
+  font-size: 18px;
+}
+
+.title:hover{
+  cursor: pointer;
+  background-color: #fafafa;
+}
+
+input {
+  margin-bottom: 10px;
+}
+
+.title-container {
+  overflow: scroll;
+}
+
+.collection-title {
+  margin: 5px 0;
+  padding-bottom: 16px;
+  font-size: 19px;
+  font-family: 'Albert Sans', sans-serif;
+  color: black;
+}
+
+.btn-div {
+margin-top: 10px;
+}
+
+.form .btn-div {
+  justify-content: flex-end;
+  display: flex;
+}

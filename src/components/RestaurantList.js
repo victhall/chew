@@ -4,9 +4,6 @@ import { useEffect, createRef } from 'react';
 import { useState } from 'react';
 
 export default function RestaurantList(props) {
-
-  console.log('CLICK CHILREN', props.childClicked)
-
   const [elRefs, setElRefs] = useState([])
 
   useEffect(() => {
@@ -15,9 +12,9 @@ export default function RestaurantList(props) {
 
   return (
     <>
+    {props.restaurantData.length ? <h2 className={classes.results}>Results</h2> : <p></p>}
       <div className={classes['restaurant-list']}>
         {props.restaurantData.map((restaurant, i) => {
-          
           return <div ref={elRefs[i]} key={i}>
             <Restaurant
               selected={Number(props.childClicked) === i}
