@@ -3,8 +3,7 @@ import classes from './Map.module.css';
 import { useState } from 'react';
 import { Marker } from './Marker'
 
-export default function Map({ restaurantData }) {
-  const [coordinates, setCoordinates] = useState([]);
+export default function Map({ restaurantData, setChildClicked }) {
 
   const center = {
     lat: 43.6532,
@@ -24,14 +23,13 @@ export default function Map({ restaurantData }) {
           // setCoordinates({lat: e.center.lat, lng: e.center.lng})
           // setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
         }}
-        onChildClick={''}
+        onChildClick={(child) => setChildClicked(child)}
       >
         {restaurantData.length && restaurantData.map((restaurant, i) => (
           <Marker
             key={i}
             lat={restaurant.coordinates.latitude}
             lng={restaurant.coordinates.longitude}
-            text={restaurant.name}
           />
         ))}
       </GoogleMapReact>

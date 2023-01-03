@@ -12,6 +12,8 @@ import CollectionForm from './CollectionForm';
 export default function Restaurant(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  if(props.selected) props.refProp?.current?.scrollIntoView({behavior: 'smooth', block: 'start'})
+
   const collectionCtx = useContext(CollectionContext);
 
   function addToCollection(collectionName) {

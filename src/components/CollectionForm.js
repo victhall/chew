@@ -9,12 +9,11 @@ export default function CollectionForm(props) {
     const { value } = e.target.dataset;
     setTitle(value)
   };
-console.log('TITLEEEE', title)
 
   function submitHandler(e) {
     e.preventDefault();
     if (collectionNameRef.current.value.trim().length === 0 && title === '') {
-      return alert("Please enter a valid collection name")
+      return alert("Please enter a valid collection name.")
     }
     
     if (collectionNameRef.current.value == "") {

@@ -7,6 +7,7 @@ import CollectionProvider from './components/store/CollectionProvider';
 
 function App() {
   const [restaurantData, setRestaurantData] = useState([]);
+  const [childClicked, setChildClicked] = useState(null)
 
   async function getRestaurantData(searchTerm) {
     try {
@@ -14,7 +15,9 @@ function App() {
         headers: {
           Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`,
         }
-      });
+      }
+      );
+      
       const data = response.data.businesses;
       const loadedRestaurants = [];
       for (const key in data) {
@@ -32,8 +35,7 @@ function App() {
           phone: data[key].display_phone,
           url: data[key].url,
           coordinates: data[key].coordinates,
-          is_closed:data[key].is_closed,
-          id: data[key].id
+          is_closed: data[key].is_closed,
         })
       }
       setRestaurantData(loadedRestaurants)
@@ -44,8 +46,10 @@ function App() {
 
   return (
     <CollectionProvider>
-      <Sidebar onSearch={getRestaurantData} restaurantData={restaurantData} />
-      <Map restaurantData={restaurantData} />
+      <Sidebar onSearch={getRestaurantData} restaurantData={restaurantData} childClicked={childClicked}/>
+      <Map restaurantData={restaurantData}
+      setChildClicked={setChildClicked}
+      />
     </CollectionProvider>
   );
 }

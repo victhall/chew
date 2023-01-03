@@ -28,7 +28,7 @@ function hideHandler() {
         {<SearchBar onSearch={props.onSearch} />}
       </div>
       <div>
-      {!show && hide && props.restaurantData && <RestaurantList restaurantData={props.restaurantData} />} 
+      {!show && hide && props.restaurantData && <RestaurantList restaurantData={props.restaurantData} childClicked={props.childClicked}/>} 
       </div>
       <div>
       {show && <Collection />}
