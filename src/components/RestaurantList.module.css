@@ -4,3 +4,10 @@
   color: black;
   margin: 20px 0 00px 0;
 }
+
+.search {
+  font-family: 'Albert Sans', sans-serif;
+  color: black;
+  text-align: center;
+  margin-top: 50px;
+}

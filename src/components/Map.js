@@ -1,14 +1,13 @@
 import GoogleMapReact from 'google-map-react';
 import classes from './Map.module.css';
-import { useState } from 'react';
-import { Marker } from './Marker'
+import { Marker } from './Marker';
 
 export default function Map({ restaurantData, setChildClicked }) {
 
   const center = {
     lat: 43.6532,
     lng: -79.3832
-  }
+  };
 
   return (
     <div className={classes['map__container']}>
@@ -19,10 +18,6 @@ export default function Map({ restaurantData, setChildClicked }) {
         defaultZoom={14}
         margin={[50, 50, 50, 50]}
         options={{ disableDefaultUI: true, zoomControl: true }}
-        onChange={(e) => {
-          // setCoordinates({lat: e.center.lat, lng: e.center.lng})
-          // setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
-        }}
         onChildClick={(child) => setChildClicked(child)}
       >
         {restaurantData.length && restaurantData.map((restaurant, i) => (

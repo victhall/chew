@@ -7,7 +7,7 @@ import CollectionProvider from './components/store/CollectionProvider';
 
 function App() {
   const [restaurantData, setRestaurantData] = useState([]);
-  const [childClicked, setChildClicked] = useState(null)
+  const [childClicked, setChildClicked] = useState(null);
 
   async function getRestaurantData(searchTerm) {
     try {
@@ -17,7 +17,7 @@ function App() {
         }
       }
       );
-      
+
       const data = response.data.businesses;
       const loadedRestaurants = [];
       for (const key in data) {
@@ -46,9 +46,9 @@ function App() {
 
   return (
     <CollectionProvider>
-      <Sidebar onSearch={getRestaurantData} restaurantData={restaurantData} childClicked={childClicked}/>
+      <Sidebar onSearch={getRestaurantData} restaurantData={restaurantData} childClicked={childClicked} />
       <Map restaurantData={restaurantData}
-      setChildClicked={setChildClicked}
+        setChildClicked={setChildClicked}
       />
     </CollectionProvider>
   );

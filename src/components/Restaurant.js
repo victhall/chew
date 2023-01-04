@@ -6,7 +6,7 @@ import { BiLinkAlt } from "react-icons/bi";
 import { FaStar } from "react-icons/fa";
 import { useState, useContext, useEffect } from 'react';
 import SaveModal from './UI/SaveModal';
-import CollectionContext from './store/collection-context'
+import CollectionContext from './store/collection-context';
 import CollectionForm from './CollectionForm';
 
 export default function Restaurant(props) {
@@ -14,7 +14,7 @@ export default function Restaurant(props) {
 
   useEffect(() => {
     if (props.selected) props.refProp?.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-  }, [props.selected])
+  }, [props.selected]);
 
   const collectionCtx = useContext(CollectionContext);
 
@@ -31,7 +31,7 @@ export default function Restaurant(props) {
       url: props.url,
       id: props.id
     })
-  }
+  };
 
   function openModal() {
     setIsModalOpen(true);

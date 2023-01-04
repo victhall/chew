@@ -1,14 +1,14 @@
-import { useContext } from 'react'
+import { useContext } from 'react';
 import CollectionContext from './store/collection-context';
 import CollectionRestaurant from './CollectionRestaurant';
-import classes from './collection.module.css'
+import classes from './collection.module.css';
 
 export default function Collection() {
   const collectionCtx = useContext(CollectionContext);
 
   function restaurantRemoveHandler(name) {
     collectionCtx.removeRestaurant(name)
-  }
+  };
 
   let groupedCollections = collectionCtx.restaurants.reduce((groupedObj, item) => {
 
@@ -17,7 +17,7 @@ export default function Collection() {
     groupedObj[item.collectionName].push(item)
 
     return groupedObj;
-  }, {})
+  }, {});
 
   return (<ul>
 

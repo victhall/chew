@@ -1,12 +1,11 @@
 import * as ReactDOM from "react-dom";
-import classes from './SaveModal.module.css'
+import classes from './SaveModal.module.css';
 
 function Backdrop(props) {
   return (
     <div className={classes.backdrop} onClick={props.onCloseModal}></div>
   );
 }
-
 
 function ModalOverlay(props) {
   return (

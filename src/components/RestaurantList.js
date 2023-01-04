@@ -12,7 +12,7 @@ export default function RestaurantList(props) {
 
   return (
     <>
-    {props.restaurantData.length ? <h2 className={classes.results}>Results</h2> : <p></p>}
+      {props.restaurantData.length ? <h2 className={classes.results}>Results</h2> : <h2 className={classes.search}>Search something delicious!</h2>}
       <div className={classes['restaurant-list']}>
         {props.restaurantData.map((restaurant, i) => {
           return <div ref={elRefs[i]} key={i}>
