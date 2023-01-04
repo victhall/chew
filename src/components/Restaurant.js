@@ -41,7 +41,7 @@ export default function Restaurant(props) {
     setIsModalOpen(false)
   };
 
-  const starArray = [...Array(5).keys()].map(i => i + 1);
+ let starArray = [...Array(5).keys()].map(i => i + 1);
 
   const uniqueTitle = [];
 
@@ -65,7 +65,7 @@ export default function Restaurant(props) {
     <>
       <div className={classes['restaurant-container']}>
         <div className={classes['img-container']}>
-          <img className={classes['restaurant-img']} src={props.image} />
+          <img className={classes['restaurant-img']} src={props.image} alt='dish at a restaurant'/>
         </div>
         <div className={classes['inner-container']}>
           <div className={classes['restaurant-header']}>

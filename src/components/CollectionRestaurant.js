@@ -19,7 +19,7 @@ export default function CollectionRestaurant(props) {
 
                 </div>
                 <p className={classes['restaurant-address']}>{item.address}, {item.city}, {item.province} {item.zip_code}</p>
-                <a href={item.url} className={classes.url} target="_blank"><p>Make a reservation</p></a>
+                <a href={item.url} className={classes.url} target="_blank" rel="noreferrer"><p>Make a reservation</p></a>
               </div>
             )}
           </div>
